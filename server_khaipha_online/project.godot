@@ -1,0 +1,73 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "CharacterManager",
+"language": "GDScript",
+"path": "res://scripts/character/charater.gd"
+}, {
+"base": "CharacterManager",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://scripts/character/enemy.gd"
+}, {
+"base": "Node",
+"class": "MapManager",
+"language": "GDScript",
+"path": "res://singleton/manager_game.gd"
+}, {
+"base": "Node",
+"class": "MapService",
+"language": "GDScript",
+"path": "res://scripts/maps/map_manager.gd"
+}, {
+"base": "CharacterManager",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scripts/character/player.gd"
+}, {
+"base": "Node",
+"class": "Task",
+"language": "GDScript",
+"path": "res://scripts/task/task.gd"
+} ]
+_global_script_class_icons={
+"CharacterManager": "",
+"Enemy": "",
+"MapManager": "",
+"MapService": "",
+"Player": "",
+"Task": ""
+}
+
+[application]
+
+config/name="server_khaipha_online"
+run/main_scene="res://World.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Networking="*res://singleton/networking.gd"
+LoadBalance="*res://singleton/load_balance.gd"
+Authentication="*res://singleton/authentication.gd"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
